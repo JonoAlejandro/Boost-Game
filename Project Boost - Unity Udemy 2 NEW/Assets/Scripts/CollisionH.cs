@@ -91,6 +91,8 @@ public class CollisionH : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        if (isTransitioning || collisionDisable) { return; }
+
         switch (other.gameObject.tag)
         {
             case "Invisible":
