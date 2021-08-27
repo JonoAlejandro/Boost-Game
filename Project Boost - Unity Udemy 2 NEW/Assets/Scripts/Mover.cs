@@ -24,7 +24,7 @@ public class Mover : MonoBehaviour
 
 
 
-        Debug.Log("THIS IS THE MAIN BRANCH");
+        Debug.Log("THIS IS THE PROTOTYPE BRANCH");
 
         rb = GetComponent<Rigidbody>();
         audioS = GetComponent<AudioSource>();
