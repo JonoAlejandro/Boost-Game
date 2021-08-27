@@ -1,4 +1,5 @@
 using UnityEngine.SceneManagement;
+using System.Collections;
 using UnityEngine;
 
 
@@ -11,14 +12,14 @@ public class CollisionH : MonoBehaviour
     [SerializeField] [Range(0, 1)] float victoryVolume;
     [SerializeField] float delay = 1f;
     Rigidbody rb;
-  
-    Vector3 startPlayerPos; 
+
+    Vector3 startPlayerPos;
     Quaternion startPlayerRotation;
 
     AudioSource audioS;
     Mover moveComponent;
     ParticleSystem particleSys;
-    
+
     bool isTransitioning = false;
     bool collisionDisable = false;
     bool disabled = false;
@@ -60,13 +61,13 @@ public class CollisionH : MonoBehaviour
     void ReloadOnPress()
     {
         if (Input.GetKeyDown(KeyCode.R))
-        {   
+        {
             ReloadLevel();
-        } 
+        }
     }
 
     void RespondToDebugKeys()
-    {   
+    {
         //Next Level
         if (Input.GetKeyDown(KeyCode.L))
         {
@@ -98,10 +99,10 @@ public class CollisionH : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         if (isTransitioning || collisionDisable) { return; }
-        
+
         switch (other.gameObject.tag)
         {
-            case "Friendly":  
+            case "Friendly":
                 break;
             case "Finish":
                 Debug.Log("You're Winner\n" + "Loading next level");
@@ -109,7 +110,7 @@ public class CollisionH : MonoBehaviour
                 break;
             default:
                 Debug.Log("You Died");
-                StartCrashSequence(); 
+                StartCrashSequence();
                 break;
         }
     }
@@ -121,7 +122,8 @@ public class CollisionH : MonoBehaviour
         isTransitioning = true;
         audioS.Stop();
         audioS.PlayOneShot(win, victoryVolume);
-        Invoke("LoadNextLevel", delay);
+
+        StartCoroutine(WaitBeforeShow());
     }
     void StartCrashSequence()
     {
@@ -130,7 +132,12 @@ public class CollisionH : MonoBehaviour
         isTransitioning = true;
         audioS.Stop();
         audioS.PlayOneShot(death);
-      
+    }
+
+    IEnumerator WaitBeforeShow()
+    {
+        yield return new WaitForSeconds(delay);
+        LoadLevel(true);
     }
 
     void LoadLevel(bool nextIsTrue)
@@ -139,8 +146,10 @@ public class CollisionH : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int SceneIndex;
         Debug.Log("This is Level: " + currentSceneIndex);
+
         switch (nextIsTrue)
-            {
+        {
+            // Loading Next
             case true:
                 Debug.Log("Loading Next Level");
                 SceneIndex = currentSceneIndex + 1;
@@ -151,8 +160,9 @@ public class CollisionH : MonoBehaviour
                 SceneManager.LoadScene(SceneIndex);
 
                 break;
+            // Loading Previous
             case false:
-                
+
                 if (currentSceneIndex != 0)
                 {
                     Debug.Log("Loading Previous Level");
@@ -160,8 +170,8 @@ public class CollisionH : MonoBehaviour
                     SceneManager.LoadScene(SceneIndex);
                 }
                 break;
-            }
-        
+        }
+
     }
     void ReloadLevel()
     {
@@ -171,7 +181,7 @@ public class CollisionH : MonoBehaviour
         isTransitioning = false;
         rb.isKinematic = true;
         disabled = true;
-        
+
 
         //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         //SceneManager.LoadScene(currentSceneIndex);
