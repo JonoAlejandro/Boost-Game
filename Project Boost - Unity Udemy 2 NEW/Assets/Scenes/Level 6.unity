@@ -768,6 +768,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7f9aada8f0dfe647b42633bf0740f8f, type: 3}
+--- !u!198 &539316732 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6177694421086773274, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
+  m_PrefabInstance: {fileID: 1964196982}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &602564335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1137,6 +1142,11 @@ MonoBehaviour:
   target: {fileID: 1182059958}
   smoothSpeed: 0.75
   offset: {x: 0, y: 5, z: -50}
+--- !u!198 &1000615397 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4600092736481867773, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
+  m_PrefabInstance: {fileID: 1964196982}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1006308935 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8182322947671970058, guid: 831b34f887ba65b478af0877d1be55b9, type: 3}
@@ -2772,6 +2782,14 @@ PrefabInstance:
       propertyPath: win
       value: 
       objectReference: {fileID: 8300000, guid: 3bf0f29e2fc626640b0c754f7ada03c5, type: 3}
+    - target: {fileID: 4429441691620752821, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.602
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275152969835817554, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5948
+      objectReference: {fileID: 0}
     - target: {fileID: 8581765054847742369, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
       propertyPath: m_Name
       value: Rocket
@@ -2824,6 +2842,14 @@ PrefabInstance:
       propertyPath: rotatePower
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 8581765054847742383, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
+      propertyPath: leftBoosterParticle
+      value: 
+      objectReference: {fileID: 539316732}
+    - target: {fileID: 8581765054847742383, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
+      propertyPath: rightBoosterParticle
+      value: 
+      objectReference: {fileID: 1000615397}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
 --- !u!4 &1988697715 stripped

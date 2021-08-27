@@ -53,40 +53,40 @@ public class Mover : MonoBehaviour
         // Right Rotate
         if (Input.GetKey(KeyCode.D))
         {
-            RotateLeft();
-        }
-        // Left Rotate
-        else if (Input.GetKey(KeyCode.A))
-        {
             RotateRight();
         }
         else
         {
-            StopRotating();
+            rightBoosterParticle.Stop();         
+        }
+        // Left Rotate
+        if (Input.GetKey(KeyCode.A))
+        {
+            RotateLeft();
+        }
+        else
+        {
+            leftBoosterParticle.Stop();
         }
     }
-    private void RotateLeft()
+    private void RotateRight()
     {
         if (!rightBoosterParticle.isPlaying)
         {
+          
             rightBoosterParticle.Play();
         }
         ApplyRotation(-rotatePower);
     }
-    private void RotateRight()
+    private void RotateLeft()
     {
         if (!leftBoosterParticle.isPlaying)
         {
+   
             leftBoosterParticle.Play();
             
         }
         ApplyRotation(rotatePower);
-    }
-
-    private void StopRotating()
-    {
-        leftBoosterParticle.Stop();
-        rightBoosterParticle.Stop();
     }
 
     void ApplyRotation(float rotation)

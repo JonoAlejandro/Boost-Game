@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 803fd94d4c1507a4bb9e6313796197ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  win: {fileID: 8300000, guid: 69c8d4072cae95b49ae5a403e9907662, type: 3}
+  win: {fileID: 8300000, guid: 3bf0f29e2fc626640b0c754f7ada03c5, type: 3}
   death: {fileID: 8300000, guid: 8077e7bde9fac8e44900d6c652b8bc2f, type: 3}
   explosionParticle: {fileID: 3060960419059983395}
   successParticle: {fileID: 8949668900369617725}
