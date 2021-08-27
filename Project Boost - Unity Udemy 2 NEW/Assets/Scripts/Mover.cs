@@ -21,6 +21,7 @@ public class Mover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("THIS IS THE MAIN BRANCH");
         rb = GetComponent<Rigidbody>();
         audioS = GetComponent<AudioSource>();
     }
