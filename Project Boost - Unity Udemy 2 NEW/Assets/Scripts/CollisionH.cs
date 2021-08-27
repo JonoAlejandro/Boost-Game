@@ -60,7 +60,7 @@ public class CollisionH : MonoBehaviour
     void ReloadOnPress()
     {
         if (Input.GetKeyDown(KeyCode.R))
-        {
+        {   
             ReloadLevel();
         }
     }
@@ -174,6 +174,7 @@ public class CollisionH : MonoBehaviour
     }
     void ReloadLevel()
     {
+        audioS.Stop();
         transform.position = startPlayerPos;
         transform.rotation = startPlayerRotation;
         moveComponent.enabled = true;
