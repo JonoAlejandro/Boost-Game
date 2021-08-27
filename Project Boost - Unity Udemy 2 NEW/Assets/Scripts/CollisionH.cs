@@ -26,8 +26,7 @@ public class CollisionH : MonoBehaviour
 
 
     void Start()
-    {
-
+    { 
         SavingPlayerPosition();
         GrabComponent();
     }
