@@ -23,6 +23,7 @@ public class CollisionH : MonoBehaviour
     bool isTransitioning = false;
     bool collisionDisable = false;
     bool DisableMovement = false;
+    bool won = false;
 
 
     void Start()
@@ -126,6 +127,7 @@ public class CollisionH : MonoBehaviour
         isTransitioning = true;
         audioS.Stop();
         audioS.PlayOneShot(win, victoryVolume);
+        won = true;
 
         StartCoroutine(WaitBeforeShow());
     }
@@ -179,6 +181,8 @@ public class CollisionH : MonoBehaviour
     }
     void ReloadLevel()
     {
+        if (won) { return; }
+
         audioS.Stop();
         transform.position = startPlayerPos;
         transform.rotation = startPlayerRotation;
@@ -186,7 +190,7 @@ public class CollisionH : MonoBehaviour
         isTransitioning = false;
         rb.isKinematic = true;
         DisableMovement = true;
-
+        
 
         //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         //SceneManager.LoadScene(currentSceneIndex);
