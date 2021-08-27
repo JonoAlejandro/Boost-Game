@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: c3ff164260bdd0842bff282d99ecc2f7
+  - enabled: 1
     path: Assets/Scenes/Level 1 Rocky.unity
     guid: 5a6c96a539abb0b4b8ddee805af418c7
   - enabled: 1
