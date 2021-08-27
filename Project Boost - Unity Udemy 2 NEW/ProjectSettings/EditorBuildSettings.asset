@@ -6,24 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+    path: Assets/Scenes/Level 1 Rocky.unity
     guid: 5a6c96a539abb0b4b8ddee805af418c7
   - enabled: 1
-    path: Assets/Scenes/Level 2.unity
+    path: Assets/Scenes/Level 2 Rocky.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Level 3.unity
+    path: Assets/Scenes/Level 3 Rocky.unity
     guid: 22adc164b80d9384aa7775bc5aa8e7c5
   - enabled: 1
-    path: Assets/Scenes/Level 4.unity
+    path: Assets/Scenes/Level 4 Rocky.unity
     guid: 18e23c74f68337c4b8480fd6dcbb3dbc
   - enabled: 1
-    path: Assets/Scenes/Level 5.unity
+    path: Assets/Scenes/Level 5 City.unity
     guid: c131cd7d10f7ae1438d28495ba3d0fd3
   - enabled: 1
-    path: Assets/Scenes/Level 6.unity
+    path: Assets/Scenes/Level 6 CIty.unity
     guid: 85b97d24d44bdc64ca04f0f516562c32
   - enabled: 1
-    path: Assets/Scenes/Level 7.unity
+    path: Assets/Scenes/Level 7 City.unity
     guid: 1db5e27287fa0e94095c46ceeb2d3669
   m_configObjects: {}
