@@ -22,7 +22,7 @@ public class CollisionH : MonoBehaviour
 
     bool isTransitioning = false;
     bool collisionDisable = false;
-    bool disabled = false;
+    bool DisableMovement = false;
 
 
     void Start()
@@ -50,10 +50,15 @@ public class CollisionH : MonoBehaviour
     {
         RespondToDebugKeys();
         ReloadOnPress();
-        if (disabled)
+        DisabledPlayerMovement();
+    }
+
+    void DisabledPlayerMovement()
+    {
+        if (DisableMovement)
         {
             rb.isKinematic = false;
-            disabled = true;
+            DisableMovement = true;
         }
     }
 
@@ -83,7 +88,7 @@ public class CollisionH : MonoBehaviour
             Debug.Log("Disabled Collision");
         }
     }
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         switch (other.gameObject.tag)
         {
@@ -180,7 +185,7 @@ public class CollisionH : MonoBehaviour
         moveComponent.enabled = true;
         isTransitioning = false;
         rb.isKinematic = true;
-        disabled = true;
+        DisableMovement = true;
 
 
         //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
