@@ -9,17 +9,15 @@ public class CollisionH : MonoBehaviour
 
     [SerializeField] ParticleSystem explosionParticle;
     [SerializeField] ParticleSystem successParticle;
-    [SerializeField] AudioClip death;
-    [SerializeField] [Range(0, 1)] float deathVolume;
-    [SerializeField] AudioClip win;
-    [SerializeField] [Range(0, 1)] float victoryVolume;
+    [SerializeField] AudioSource audioWin;
+    [SerializeField] AudioSource audioDie;
+
     [SerializeField] float delay = 1f;
     Rigidbody rb;
 
     Vector3 startPlayerPos;
     Quaternion startPlayerRotation;
 
-    AudioSource audioS;
     Mover moveComponent;
     ParticleSystem particleSys;
 
@@ -38,7 +36,7 @@ public class CollisionH : MonoBehaviour
     void GrabComponent()
     {
         rb = GetComponent<Rigidbody>();
-        audioS = GetComponent<AudioSource>();
+        
         moveComponent = GetComponent<Mover>();
         particleSys = GetComponent<ParticleSystem>();
     }
@@ -130,8 +128,8 @@ public class CollisionH : MonoBehaviour
         successParticle.Play();
         moveComponent.enabled = false;
         isTransitioning = true;
-        audioS.Stop();
-        audioS.PlayOneShot(win, victoryVolume);
+        
+        audioWin.Play();
         won = true;
 
         StartCoroutine(WaitBeforeShow());
@@ -141,8 +139,8 @@ public class CollisionH : MonoBehaviour
         explosionParticle.Play();
         moveComponent.enabled = false;
         isTransitioning = true;
-        audioS.Stop();
-        audioS.PlayOneShot(death, deathVolume);
+        
+        audioDie.Play();
     }
 
     IEnumerator WaitBeforeShow()
@@ -188,7 +186,7 @@ public class CollisionH : MonoBehaviour
     {
         if (won) { return; }
 
-        audioS.Stop();
+        audioDie.Stop();
         transform.position = startPlayerPos;
         transform.rotation = startPlayerRotation;
         moveComponent.enabled = true;
