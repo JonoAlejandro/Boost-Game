@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class QuitApplication : MonoBehaviour
@@ -17,8 +18,8 @@ public class QuitApplication : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("Exiting Game");
-            Application.Quit();
+            Debug.Log("Going to Main Menu");
+            SceneManager.LoadScene(0);
         }
     }
 }
