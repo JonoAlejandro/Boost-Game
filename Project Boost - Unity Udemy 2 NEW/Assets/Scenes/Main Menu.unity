@@ -789,7 +789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9132932649549006035, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 245
+      value: 172
       objectReference: {fileID: 0}
     - target: {fileID: 9132932649549006035, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -797,7 +797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9132932649549006035, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -218
+      value: -33.7
       objectReference: {fileID: 0}
     - target: {fileID: 9132932649549006035, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -853,13 +853,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175832695}
-  m_LocalRotation: {x: -0.20449899, y: -0.51071095, z: 0.11492065, w: 0.8271322}
-  m_LocalPosition: {x: 781, y: -395, z: -436}
+  m_LocalRotation: {x: -0.00007358693, y: -0.4073968, z: 0.53513205, w: 0.74004155}
+  m_LocalPosition: {x: 850, y: 45.5, z: -743}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1376376307}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -12.763, y: -66.127, z: 24.148}
+  m_LocalEulerAnglesHint: {x: 25.843, y: -42.073, z: 61.657}
 --- !u!108 &175832697
 Light:
   m_ObjectHideFlags: 0
@@ -6058,27 +6058,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9132932649549006035, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 16.64208
+      value: 9.583674
       objectReference: {fileID: 0}
     - target: {fileID: 9132932649549006035, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 16.642076
+      value: 9.583673
       objectReference: {fileID: 0}
     - target: {fileID: 9132932649549006035, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: m_LocalScale.z
-      value: 16.64208
+      value: 9.583674
       objectReference: {fileID: 0}
     - target: {fileID: 9132932649549006035, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 563.76
+      value: 379.4
       objectReference: {fileID: 0}
     - target: {fileID: 9132932649549006035, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -372.84
+      value: -311.6
       objectReference: {fileID: 0}
     - target: {fileID: 9132932649549006035, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -348.89
+      value: -544.92
       objectReference: {fileID: 0}
     - target: {fileID: 9132932649549006035, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7480,11 +7480,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 302788194, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: rockRotation.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 302788194, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: rockRotation.y
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 302788194, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: rockRotation.z
@@ -7492,11 +7492,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 302788195, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: period
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 302788195, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: movementVector.y
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3826386756960101190, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: m_IsActive
