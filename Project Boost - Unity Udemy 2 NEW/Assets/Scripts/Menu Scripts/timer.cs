@@ -7,15 +7,17 @@ using TMPro;
 public class timer : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
-    float time;
+    public float timeStart;
 
+    private void Start()
+    {
+       timerText.text = timeStart.ToString("F2"); 
+    }
 
     // Update is called once per frame
     void Update()
     {
-        time = Time.time;
-        int timeInt = (int)time;
-        timerText.text = "Timer: " + timeInt;
-
+        timeStart += Time.deltaTime;
+        timerText.text = timeStart.ToString("F2");
     }
 }
