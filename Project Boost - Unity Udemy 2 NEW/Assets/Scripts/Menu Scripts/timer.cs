@@ -16,5 +16,6 @@ public class timer : MonoBehaviour
         time = Time.time;
         int timeInt = (int)time;
         timerText.text = "Timer: " + timeInt;
+
     }
 }
