@@ -10,12 +10,11 @@ public class Mover : MonoBehaviour
     [SerializeField] ParticleSystem mainBoosterParticle;
     [SerializeField] ParticleSystem leftBoosterParticle;
     [SerializeField] ParticleSystem rightBoosterParticle;
-    [SerializeField] AudioClip mainEngine;
+    [SerializeField] AudioSource mainEngineSound;
   
-    [SerializeField] [Range(0, 1)] float mainThrustVolume;
     //Cache
     Rigidbody rb;
-    AudioSource audioS;
+
 
     //State
     
@@ -26,7 +25,6 @@ public class Mover : MonoBehaviour
         Debug.Log("THIS IS THE PROTOTYPE BRANCH");
         Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
-        audioS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -98,9 +96,9 @@ public class Mover : MonoBehaviour
     private void StartThrusting()
     {
         rb.AddRelativeForce(Vector3.up * Time.deltaTime * thrust);
-        if (!audioS.isPlaying)
+        if (!mainEngineSound.isPlaying)
         {
-            audioS.PlayOneShot(mainEngine, mainThrustVolume);
+            mainEngineSound.Play();
         }
         if (!mainBoosterParticle.isPlaying)
         {
@@ -109,7 +107,7 @@ public class Mover : MonoBehaviour
     }
     private void StopThrusting()
     {
-        audioS.Stop();
+        mainEngineSound.Stop();
         mainBoosterParticle.Stop();
     }
 }
