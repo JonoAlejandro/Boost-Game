@@ -4,13 +4,15 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {   
     //Parameters
-    [SerializeField] float thrust;
     [SerializeField] float rotatePower;
-    [SerializeField] AudioClip mainEngine;
 
+    [SerializeField] float thrust;
     [SerializeField] ParticleSystem mainBoosterParticle;
     [SerializeField] ParticleSystem leftBoosterParticle;
     [SerializeField] ParticleSystem rightBoosterParticle;
+    [SerializeField] AudioClip mainEngine;
+  
+    [SerializeField] [Range(0, 1)] float mainThrustVolume;
     //Cache
     Rigidbody rb;
     AudioSource audioS;
@@ -98,7 +100,7 @@ public class Mover : MonoBehaviour
         rb.AddRelativeForce(Vector3.up * Time.deltaTime * thrust);
         if (!audioS.isPlaying)
         {
-            audioS.PlayOneShot(mainEngine);
+            audioS.PlayOneShot(mainEngine, mainThrustVolume);
         }
         if (!mainBoosterParticle.isPlaying)
         {

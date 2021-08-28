@@ -5,10 +5,13 @@ using UnityEngine;
 //POG
 public class CollisionH : MonoBehaviour
 {
-    [SerializeField] AudioClip win;
-    [SerializeField] AudioClip death;
+
+
     [SerializeField] ParticleSystem explosionParticle;
     [SerializeField] ParticleSystem successParticle;
+    [SerializeField] AudioClip death;
+    [SerializeField] [Range(0, 1)] float deathVolume;
+    [SerializeField] AudioClip win;
     [SerializeField] [Range(0, 1)] float victoryVolume;
     [SerializeField] float delay = 1f;
     Rigidbody rb;
@@ -139,7 +142,7 @@ public class CollisionH : MonoBehaviour
         moveComponent.enabled = false;
         isTransitioning = true;
         audioS.Stop();
-        audioS.PlayOneShot(death);
+        audioS.PlayOneShot(death, deathVolume);
     }
 
     IEnumerator WaitBeforeShow()

@@ -281,12 +281,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7e70148968522e49b685a3e68005b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 1000
   rotatePower: 120
-  mainEngine: {fileID: 8300000, guid: 71d84e23b8ada494f9618f0462ac1437, type: 3}
+  thrust: 1000
   mainBoosterParticle: {fileID: 8703807419472926654}
   leftBoosterParticle: {fileID: 6177694421086773274}
   rightBoosterParticle: {fileID: 4600092736481867773}
+  mainEngine: {fileID: 8300000, guid: 71d84e23b8ada494f9618f0462ac1437, type: 3}
+  mainThrustVolume: 1
 --- !u!114 &112358414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,12 +300,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 803fd94d4c1507a4bb9e6313796197ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  win: {fileID: 8300000, guid: 3bf0f29e2fc626640b0c754f7ada03c5, type: 3}
-  death: {fileID: 8300000, guid: 8077e7bde9fac8e44900d6c652b8bc2f, type: 3}
   explosionParticle: {fileID: 3060960419059983395}
   successParticle: {fileID: 8949668900369617725}
+  death: {fileID: 8300000, guid: 8077e7bde9fac8e44900d6c652b8bc2f, type: 3}
+  deathVolume: 0.5
+  win: {fileID: 8300000, guid: 3bf0f29e2fc626640b0c754f7ada03c5, type: 3}
   victoryVolume: 0.25
-  delay: 5
+  delay: 3.5
 --- !u!114 &3334069172290179245
 MonoBehaviour:
   m_ObjectHideFlags: 0
