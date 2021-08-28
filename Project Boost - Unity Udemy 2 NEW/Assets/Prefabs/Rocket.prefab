@@ -191,7 +191,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 51
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -305,7 +305,7 @@ MonoBehaviour:
   death: {fileID: 8300000, guid: 8077e7bde9fac8e44900d6c652b8bc2f, type: 3}
   deathVolume: 0.5
   win: {fileID: 8300000, guid: 3bf0f29e2fc626640b0c754f7ada03c5, type: 3}
-  victoryVolume: 0.25
+  victoryVolume: 0.2
   delay: 3.5
 --- !u!114 &3334069172290179245
 MonoBehaviour:
