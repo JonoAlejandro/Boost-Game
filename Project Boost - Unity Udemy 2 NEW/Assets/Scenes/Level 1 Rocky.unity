@@ -739,6 +739,7 @@ MeshFilter:
   m_GameObject: {fileID: 153537495}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &226032203
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,6 +867,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+=======
+>>>>>>> parent of dbed435 (Re Childed Audio)
 =======
 >>>>>>> parent of dbed435 (Re Childed Audio)
 --- !u!1 &246493074
@@ -4902,6 +4905,7 @@ MeshFilter:
   m_GameObject: {fileID: 1341133142}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1350384198
 GameObject:
   m_ObjectHideFlags: 0
@@ -5029,6 +5033,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+=======
+>>>>>>> parent of dbed435 (Re Childed Audio)
 =======
 >>>>>>> parent of dbed435 (Re Childed Audio)
 --- !u!1 &1374003434
@@ -5981,6 +5987,7 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 831b34f887ba65b478af0877d1be55b9, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1649146351
 GameObject:
   m_ObjectHideFlags: 0
@@ -6108,6 +6115,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+=======
+>>>>>>> parent of dbed435 (Re Childed Audio)
 =======
 >>>>>>> parent of dbed435 (Re Childed Audio)
 --- !u!1 &1686004142
