@@ -4,13 +4,15 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {   
     //Parameters
-    [SerializeField] float thrust;
     [SerializeField] float rotatePower;
-    [SerializeField] AudioClip mainEngine;
 
+    [SerializeField] float thrust;
     [SerializeField] ParticleSystem mainBoosterParticle;
     [SerializeField] ParticleSystem leftBoosterParticle;
     [SerializeField] ParticleSystem rightBoosterParticle;
+    [SerializeField] AudioClip mainEngine;
+  
+    [SerializeField] [Range(0, 1)] float mainThrustVolume;
     //Cache
     Rigidbody rb;
     AudioSource audioS;
@@ -21,11 +23,8 @@ public class Mover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
-
-        Debug.Log("THIS IS THE MAIN BRANCH");
-
+        Debug.Log("THIS IS THE PROTOTYPE BRANCH");
+        Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
         audioS = GetComponent<AudioSource>();
     }
@@ -53,40 +52,40 @@ public class Mover : MonoBehaviour
         // Right Rotate
         if (Input.GetKey(KeyCode.D))
         {
-            RotateLeft();
-        }
-        // Left Rotate
-        else if (Input.GetKey(KeyCode.A))
-        {
             RotateRight();
         }
         else
         {
-            StopRotating();
+            rightBoosterParticle.Stop();         
+        }
+        // Left Rotate
+        if (Input.GetKey(KeyCode.A))
+        {
+            RotateLeft();
+        }
+        else
+        {
+            leftBoosterParticle.Stop();
         }
     }
-    private void RotateLeft()
+    private void RotateRight()
     {
         if (!rightBoosterParticle.isPlaying)
         {
+          
             rightBoosterParticle.Play();
         }
         ApplyRotation(-rotatePower);
     }
-    private void RotateRight()
+    private void RotateLeft()
     {
         if (!leftBoosterParticle.isPlaying)
         {
+   
             leftBoosterParticle.Play();
             
         }
         ApplyRotation(rotatePower);
-    }
-
-    private void StopRotating()
-    {
-        leftBoosterParticle.Stop();
-        rightBoosterParticle.Stop();
     }
 
     void ApplyRotation(float rotation)
@@ -101,7 +100,7 @@ public class Mover : MonoBehaviour
         rb.AddRelativeForce(Vector3.up * Time.deltaTime * thrust);
         if (!audioS.isPlaying)
         {
-            audioS.PlayOneShot(mainEngine);
+            audioS.PlayOneShot(mainEngine, mainThrustVolume);
         }
         if (!mainBoosterParticle.isPlaying)
         {

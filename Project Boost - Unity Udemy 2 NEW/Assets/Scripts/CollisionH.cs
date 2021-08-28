@@ -5,10 +5,13 @@ using UnityEngine;
 //POG
 public class CollisionH : MonoBehaviour
 {
-    [SerializeField] AudioClip win;
-    [SerializeField] AudioClip death;
+
+
     [SerializeField] ParticleSystem explosionParticle;
     [SerializeField] ParticleSystem successParticle;
+    [SerializeField] AudioClip death;
+    [SerializeField] [Range(0, 1)] float deathVolume;
+    [SerializeField] AudioClip win;
     [SerializeField] [Range(0, 1)] float victoryVolume;
     [SerializeField] float delay = 1f;
     Rigidbody rb;
@@ -22,7 +25,8 @@ public class CollisionH : MonoBehaviour
 
     bool isTransitioning = false;
     bool collisionDisable = false;
-    bool disabled = false;
+    bool DisableMovement = false;
+    bool won = false;
 
 
     void Start()
@@ -50,10 +54,15 @@ public class CollisionH : MonoBehaviour
     {
         RespondToDebugKeys();
         ReloadOnPress();
-        if (disabled)
+        DisabledPlayerMovement();
+    }
+
+    void DisabledPlayerMovement()
+    {
+        if (DisableMovement)
         {
             rb.isKinematic = false;
-            disabled = true;
+            DisableMovement = true;
         }
     }
 
@@ -83,8 +92,10 @@ public class CollisionH : MonoBehaviour
             Debug.Log("Disabled Collision");
         }
     }
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
+        if (isTransitioning || collisionDisable) { return; }
+
         switch (other.gameObject.tag)
         {
             case "Invisible":
@@ -121,6 +132,7 @@ public class CollisionH : MonoBehaviour
         isTransitioning = true;
         audioS.Stop();
         audioS.PlayOneShot(win, victoryVolume);
+        won = true;
 
         StartCoroutine(WaitBeforeShow());
     }
@@ -130,7 +142,7 @@ public class CollisionH : MonoBehaviour
         moveComponent.enabled = false;
         isTransitioning = true;
         audioS.Stop();
-        audioS.PlayOneShot(death);
+        audioS.PlayOneShot(death, deathVolume);
     }
 
     IEnumerator WaitBeforeShow()
@@ -174,14 +186,16 @@ public class CollisionH : MonoBehaviour
     }
     void ReloadLevel()
     {
+        if (won) { return; }
+
         audioS.Stop();
         transform.position = startPlayerPos;
         transform.rotation = startPlayerRotation;
         moveComponent.enabled = true;
         isTransitioning = false;
         rb.isKinematic = true;
-        disabled = true;
-
+        DisableMovement = true;
+        
 
         //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         //SceneManager.LoadScene(currentSceneIndex);
