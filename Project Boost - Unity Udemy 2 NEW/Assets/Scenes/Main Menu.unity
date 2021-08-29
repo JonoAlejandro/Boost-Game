@@ -3574,7 +3574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 302788195, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: movementVector.y
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1159033153501380666, guid: c68c14f8c0f06fe4c9e16b716f5b91fb, type: 3}
       propertyPath: m_IsActive
