@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 1 Rocky.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/Level 2 Rocky 1.unity
+    guid: b8b788f3c1b597945a03884c5ebda071
+  - enabled: 1
     path: Assets/Scenes/Level 3 Rocky.unity
     guid: 22adc164b80d9384aa7775bc5aa8e7c5
   - enabled: 1
