@@ -3358,6 +3358,10 @@ PrefabInstance:
       propertyPath: delay
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 174542056, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1964196983}
     - target: {fileID: 8581765054847742369, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
       propertyPath: m_Name
       value: Rocket
@@ -3408,6 +3412,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
+--- !u!54 &1964196983 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 8581765054847742382, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
+  m_PrefabInstance: {fileID: 1964196982}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2030667859 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2465685559387496616, guid: 805225f063533824290881aca549ad12, type: 3}
