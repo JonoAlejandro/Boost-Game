@@ -6,18 +6,16 @@ using UnityEngine;
 public class CollisionH : MonoBehaviour
 {
 
-
     [SerializeField] ParticleSystem explosionParticle;
     [SerializeField] ParticleSystem successParticle;
     [SerializeField] AudioSource audioWin;
     [SerializeField] AudioSource audioDie;
-
     [SerializeField] float delay = 1f;
-    Rigidbody rb;
 
     Vector3 startPlayerPos;
     Quaternion startPlayerRotation;
 
+    Rigidbody rb;
     Mover moveComponent;
     ParticleSystem particleSys;
 
@@ -25,7 +23,6 @@ public class CollisionH : MonoBehaviour
     bool collisionDisable = false;
     bool DisableMovement = false;
     bool won = false;
-
 
     void Start()
     { 
@@ -193,9 +190,6 @@ public class CollisionH : MonoBehaviour
         isTransitioning = false;
         rb.isKinematic = true;
         DisableMovement = true;
-        
 
-        //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        //SceneManager.LoadScene(currentSceneIndex);
     }
 }
