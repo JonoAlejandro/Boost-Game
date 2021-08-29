@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226032203}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.28866, y: -118.56117, z: 919.0533}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_Children: []
   m_Father: {fileID: 8581765054847742379}
@@ -152,7 +152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350384198}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.28866, y: -118.56117, z: 919.0533}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_Children: []
   m_Father: {fileID: 8581765054847742379}
@@ -279,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649146351}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.28866, y: -118.56117, z: 919.0533}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_Children: []
   m_Father: {fileID: 8581765054847742379}
@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 8581765054847742382}
   - component: {fileID: 8581765054847742383}
   - component: {fileID: 112358414}
-  - component: {fileID: 3334069172290179245}
+  - component: {fileID: 174542056}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -591,7 +591,7 @@ MonoBehaviour:
   audioWin: {fileID: 226032205}
   audioDie: {fileID: 1649146353}
   delay: 3.5
---- !u!114 &3334069172290179245
+--- !u!114 &174542056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -603,6 +603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4baba0aaa09518b438b150ae54447814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenu: {fileID: 0}
 --- !u!1001 &970614110071826349
 PrefabInstance:
   m_ObjectHideFlags: 0
