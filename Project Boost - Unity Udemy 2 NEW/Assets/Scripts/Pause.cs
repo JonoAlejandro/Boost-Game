@@ -8,6 +8,7 @@ public class Pause : MonoBehaviour
 {
 
     [SerializeField] GameObject mainMenu;
+    [SerializeField] GameObject controlsMenu;
     // Components
 
     //States
@@ -71,7 +72,8 @@ public class Pause : MonoBehaviour
     }
 
     public void UnpauseSequence()
-    {   
+    {
+        controlsMenu.SetActive(false);
         mainMenu.SetActive(false);
         Time.timeScale = 1;
         Debug.Log("Unpausing Game");

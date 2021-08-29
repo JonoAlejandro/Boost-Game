@@ -2434,6 +2434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 236560030}
+  controlsMenu: {fileID: 1622755688}
 --- !u!1001 &1015832873
 PrefabInstance:
   m_ObjectHideFlags: 0
