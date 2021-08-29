@@ -39,7 +39,7 @@ public class Pause : MonoBehaviour
 
     void PauseGame()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {   
             Debug.Log("Going to Pause Menu");
             Cursor.visible = true;
@@ -53,7 +53,7 @@ public class Pause : MonoBehaviour
 
     void UnpauseGame() 
     {
-        if (Input.GetKeyDown(KeyCode.P) || pause)
+        if (Input.GetKeyDown(KeyCode.U) || pause)
         {
             UnpauseSequence();
         }
@@ -68,5 +68,10 @@ public class Pause : MonoBehaviour
         moverScript.enabled = true;
         rb.constraints = RigidbodyConstraints.None;
         
+    }
+
+    public void GoToMainMenu()
+    {   
+        SceneManager.LoadScene(0);
     }
 }
