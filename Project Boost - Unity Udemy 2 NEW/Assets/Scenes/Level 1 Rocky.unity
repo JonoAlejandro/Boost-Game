@@ -951,7 +951,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 369.96887, y: -73.3}
+  m_AnchoredPosition: {x: 383.59998, y: -90.0307}
   m_SizeDelta: {x: 739.9377, y: 46.2864}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &443735247
@@ -5352,7 +5352,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 369.96887, y: -23.469177}
+  m_AnchoredPosition: {x: 383.6, y: -40.2}
   m_SizeDelta: {x: 739.9377, y: 46.9383}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1896626503
@@ -5389,7 +5389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Timer '
+  m_text: 'Timer :'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc688f1b9e4662848805bae476819318, type: 2}
   m_sharedMaterial: {fileID: 3389483252419802862, guid: dc688f1b9e4662848805bae476819318, type: 2}
@@ -6557,10 +6557,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 174542056, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
-      propertyPath: mainMenu
-      value: 
-      objectReference: {fileID: 236560030}
     - target: {fileID: 8581765054847742369, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
       propertyPath: m_Name
       value: Rocket
@@ -6609,6 +6605,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 174542056, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
