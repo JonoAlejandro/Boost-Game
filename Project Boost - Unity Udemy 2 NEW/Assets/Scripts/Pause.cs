@@ -12,6 +12,8 @@ public class Pause : MonoBehaviour
     [SerializeField] GameObject controlsButton;
     [SerializeField] GameObject controlsMenu;
     [SerializeField] GameObject VictoryScreen;
+    [SerializeField] GameObject OptionsMenu;
+
     // Components
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI timerTextVictory;
@@ -104,6 +106,8 @@ public class Pause : MonoBehaviour
     {
         controlsMenu.SetActive(false);
         mainMenu.SetActive(false);
+        OptionsMenu.SetActive(false);
+
         Time.timeScale = 1;
         Debug.Log("Unpausing Game");
         Cursor.visible = false; 
