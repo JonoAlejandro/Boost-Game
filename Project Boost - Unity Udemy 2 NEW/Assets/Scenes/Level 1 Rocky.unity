@@ -1214,6 +1214,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: a794348c90fe9df48a342ea1c30bce9b, type: 2}
+  musicSlider: {fileID: 374087133}
+  sfxSlider: {fileID: 1391400765}
 --- !u!114 &374087133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5772,6 +5774,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: a794348c90fe9df48a342ea1c30bce9b, type: 2}
+  musicSlider: {fileID: 374087133}
+  sfxSlider: {fileID: 1391400765}
 --- !u!114 &1391400765
 MonoBehaviour:
   m_ObjectHideFlags: 0
