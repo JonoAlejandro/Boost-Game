@@ -1,24 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class Pause : MonoBehaviour
 {
 
     [SerializeField] GameObject mainMenu;
+    [SerializeField] GameObject playButton;
+    [SerializeField] GameObject controlsButton;
+    [SerializeField] GameObject controlsMenu;
+    [SerializeField] GameObject VictoryScreen;
     // Components
-
+    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI timerTextVictory;
+    public TextMeshProUGUI deathText;
+    public TextMeshProUGUI deathTextVictory;
     //States
     bool pauseToggle = false;
+    bool isOnVictoryScreen = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
         mainMenu.SetActive(false);
-
     }
 
 
@@ -27,6 +33,7 @@ public class Pause : MonoBehaviour
     {
         PauseGame();
         FirstSceneCheck();
+        VictoryScreenCheck();
     }
 
     void FirstSceneCheck()
@@ -71,7 +78,8 @@ public class Pause : MonoBehaviour
     }
 
     public void UnpauseSequence()
-    {   
+    {
+        controlsMenu.SetActive(false);
         mainMenu.SetActive(false);
         Time.timeScale = 1;
         Debug.Log("Unpausing Game");
@@ -81,5 +89,31 @@ public class Pause : MonoBehaviour
     public void GoToMainMenu()
     {   
         SceneManager.LoadScene(0);
+    }
+
+    void VictoryScreenCheck()
+    {
+        // Checking if Scene is the last
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int SceneIndex = currentSceneIndex + 1;
+       
+     
+        if (SceneIndex == SceneManager.sceneCountInBuildSettings && !isOnVictoryScreen)
+        {
+            
+            Debug.Log("this is the last level");
+ 
+            timerTextVictory.text = timerText.text;
+            deathTextVictory.text = deathText.text;
+
+            // changing states
+            VictoryScreen.SetActive(true);
+            timerText.enabled = false;
+            deathText.enabled = false;
+            mainMenu.SetActive(true);
+            playButton.SetActive(false);
+            controlsButton.SetActive(false);
+            isOnVictoryScreen = true;
+        }
     }
 }

@@ -7,11 +7,14 @@ public class Mover : MonoBehaviour
     [SerializeField] float rotatePower;
 
     [SerializeField] float thrust;
+
     [SerializeField] ParticleSystem mainBoosterParticle;
     [SerializeField] ParticleSystem leftBoosterParticle;
     [SerializeField] ParticleSystem rightBoosterParticle;
     [SerializeField] AudioSource mainEngineSound;
-  
+    [SerializeField] AudioSource leftEngineSound;
+    [SerializeField] AudioSource rightEngineSound;
+
     //Cache
     Rigidbody rb;
 
@@ -54,6 +57,7 @@ public class Mover : MonoBehaviour
         }
         else
         {
+            rightEngineSound.Stop();
             rightBoosterParticle.Stop();         
         }
         // Left Rotate
@@ -64,13 +68,14 @@ public class Mover : MonoBehaviour
         else
         {
             leftBoosterParticle.Stop();
+            leftEngineSound.Stop();
         }
     }
     private void RotateRight()
     {
         if (!rightBoosterParticle.isPlaying)
         {
-          
+            rightEngineSound.Play();
             rightBoosterParticle.Play();
         }
         ApplyRotation(-rotatePower);
@@ -79,7 +84,7 @@ public class Mover : MonoBehaviour
     {
         if (!leftBoosterParticle.isPlaying)
         {
-   
+            leftEngineSound.Play();
             leftBoosterParticle.Play();
             
         }
