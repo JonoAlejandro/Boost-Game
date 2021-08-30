@@ -116,6 +116,7 @@ public class Pause : MonoBehaviour
     public void GoToMainMenu()
     {   
         SceneManager.LoadScene(0);
+        AudioListener.pause = false;
     }
 
     void VictoryScreenCheck()

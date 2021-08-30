@@ -214,7 +214,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Background Music
+  m_Name: Menu Music
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: b7db5a2bf8603f243979002fa09319c3
   m_Children: []
@@ -410,10 +410,11 @@ AudioMixerController:
     - 4483c3149d243754a9fa248b0be6891c
     - b19db7c9efbf0f54cb56f5ca7c1e2d5f
     - 5cd728375f9bff84db40b5e350ce52b0
+    - b7db5a2bf8603f243979002fa09319c3
     - 0b493609e654eb84eaff3d2a88a5e7b4
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: -2761883265074831880}
+  m_TargetSnapshot: {fileID: 24500006}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -495,7 +496,7 @@ AudioMixerSnapshotController:
     edbfbf7a741fb2d4fb11f030bb160533: 0.18999982
     346f748af40461e45b5cbbefd8f9fc75: -3479
     b6fbe4dafda7392478ef43ac03601084: 0
-    75bbbeda68a24dd489c796e85f492f92: -3.1841109
+    75bbbeda68a24dd489c796e85f492f92: -5.3230734
     c5bbbe0b40462f742a6c8ce3c06330f7: 0
     4280bf0b2ff272e43a9e31978b43d656: -15.421314
     98ac5e3b4cae33641823ab51f9ff6757: -3729
