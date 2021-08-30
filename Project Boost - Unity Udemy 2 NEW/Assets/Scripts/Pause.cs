@@ -114,7 +114,10 @@ public class Pause : MonoBehaviour
     }
 
     public void GoToMainMenu()
-    {   
+    {
+        unpaused.TransitionTo(pauseMusicTransitionTime);
+        Time.timeScale = 1;
+        AudioListener.pause = false;
         SceneManager.LoadScene(0);
     }
 
