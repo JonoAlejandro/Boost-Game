@@ -19,6 +19,7 @@ public class Pause : MonoBehaviour
     public TextMeshProUGUI deathTextVictory;
     public AudioMixerSnapshot paused;
     public AudioMixerSnapshot unpaused;
+    public AudioSource backgroundMusic;
     public float pauseMusicTransitionTime;
     //States
     bool pauseToggle = false;
@@ -77,13 +78,17 @@ public class Pause : MonoBehaviour
 
     void Lowpass()
     {
+        
         if (Time.timeScale == 0)
-        {
+        {            
             paused.TransitionTo(pauseMusicTransitionTime);
+            AudioListener.pause = true;
+            backgroundMusic.ignoreListenerPause = true;
         }
         else if (Time.timeScale == 1)
         {
             unpaused.TransitionTo(pauseMusicTransitionTime);
+            AudioListener.pause = false;
         }
     }
 
