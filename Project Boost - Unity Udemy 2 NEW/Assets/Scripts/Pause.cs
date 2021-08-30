@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
 public class Pause : MonoBehaviour
@@ -16,6 +17,9 @@ public class Pause : MonoBehaviour
     public TextMeshProUGUI timerTextVictory;
     public TextMeshProUGUI deathText;
     public TextMeshProUGUI deathTextVictory;
+    public AudioMixerSnapshot paused;
+    public AudioMixerSnapshot unpaused;
+    public float pauseMusicTransitionTime;
     //States
     bool pauseToggle = false;
     bool isOnVictoryScreen = false;
@@ -32,8 +36,10 @@ public class Pause : MonoBehaviour
     void Update()
     {
         PauseGame();
+        Lowpass();
         FirstSceneCheck();
         VictoryScreenCheck();
+
     }
 
     void FirstSceneCheck()
@@ -69,7 +75,19 @@ public class Pause : MonoBehaviour
 
     }
 
-    void PauseSequence()
+    void Lowpass()
+    {
+        if (Time.timeScale == 0)
+        {
+            paused.TransitionTo(pauseMusicTransitionTime);
+        }
+        else if (Time.timeScale == 1)
+        {
+            unpaused.TransitionTo(pauseMusicTransitionTime);
+        }
+    }
+
+        void PauseSequence()
     {
         Time.timeScale = 0;
         Debug.Log("Going to Pause Menu");
