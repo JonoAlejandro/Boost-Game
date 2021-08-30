@@ -151,7 +151,7 @@ public class CollisionH : MonoBehaviour
 
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int SceneIndex;
-        Debug.Log("This is Level: " + currentSceneIndex);
+        
 
         switch (nextIsTrue)
         {
