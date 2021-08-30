@@ -16,6 +16,6 @@ public class timer : MonoBehaviour
     void Update()
     {
         timeStart += Time.deltaTime;
-        timerText.text = "Timer: " + timeStart.ToString("F2");
+        timerText.text = "Time: " + timeStart.ToString("F2");
     }
 }
