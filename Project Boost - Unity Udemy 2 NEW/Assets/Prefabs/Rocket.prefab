@@ -910,6 +910,10 @@ MonoBehaviour:
   audioWin: {fileID: 226032205}
   audioDie: {fileID: 1649146353}
   delay: 3.5
+  unpaused: {fileID: 24500006, guid: a794348c90fe9df48a342ea1c30bce9b, type: 2}
+  victory: {fileID: -8224072307267554530, guid: a794348c90fe9df48a342ea1c30bce9b, type: 2}
+  victorySnapshotTransition: 0.001
+  unpausedSnapshotTransition: 0.001
 --- !u!1001 &970614110071826349
 PrefabInstance:
   m_ObjectHideFlags: 0

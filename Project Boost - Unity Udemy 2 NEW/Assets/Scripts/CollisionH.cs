@@ -1,6 +1,7 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 //POG
 public class CollisionH : MonoBehaviour
@@ -11,6 +12,10 @@ public class CollisionH : MonoBehaviour
     [SerializeField] AudioSource audioWin;
     [SerializeField] AudioSource audioDie;
     [SerializeField] float delay = 1f;
+    public AudioMixerSnapshot unpaused;
+    public AudioMixerSnapshot victory;
+    public float victorySnapshotTransition;
+    public float unpausedSnapshotTransition;
 
     Vector3 startPlayerPos;
     Quaternion startPlayerRotation;
@@ -111,7 +116,9 @@ public class CollisionH : MonoBehaviour
                 break;
             case "Finish":
                 Debug.Log("You're Winner\n" + "Loading next level");
+                VictorySnapshotTransition();
                 StartSuccessSequence();
+
                 break;
             default:
                 Debug.Log("You Died");
@@ -120,14 +127,24 @@ public class CollisionH : MonoBehaviour
         }
     }
 
-    void StartSuccessSequence()
+    void VictorySnapshotTransition()
     {
+        victory.TransitionTo(victorySnapshotTransition);
+            Debug.Log("here");
+
+    }
+
+    void StartSuccessSequence()
+    { 
         successParticle.Play();
         moveComponent.enabled = false;
         isTransitioning = true;
-        
+
+
         audioWin.Play();
         won = true;
+
+
 
         StartCoroutine(WaitBeforeShow());
     }
@@ -143,6 +160,7 @@ public class CollisionH : MonoBehaviour
     IEnumerator WaitBeforeShow()
     {
         yield return new WaitForSeconds(delay);
+        unpaused.TransitionTo(unpausedSnapshotTransition);
         LoadLevel(true);
     }
 

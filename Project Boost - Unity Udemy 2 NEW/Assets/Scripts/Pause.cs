@@ -26,6 +26,7 @@ public class Pause : MonoBehaviour
     //States
     bool pauseToggle = false;
     bool isOnVictoryScreen = false;
+    bool pauseMusicToggle = false;
 
 
     // Start is called before the first frame update
@@ -81,16 +82,21 @@ public class Pause : MonoBehaviour
     void Lowpass()
     {
         
-        if (Time.timeScale == 0)
+        if (Time.timeScale == 0 && !pauseMusicToggle)
         {            
             paused.TransitionTo(pauseMusicTransitionTime);
             AudioListener.pause = true;
             backgroundMusic.ignoreListenerPause = true;
+            pauseMusicToggle = true;
+            Debug.Log("Pause Music");
         }
-        else if (Time.timeScale == 1)
+        else if (Time.timeScale == 1 && pauseMusicToggle)
         {
             unpaused.TransitionTo(pauseMusicTransitionTime);
             AudioListener.pause = false;
+            pauseMusicToggle = false;
+            Debug.Log("Unpause Music");
+
         }
     }
 
