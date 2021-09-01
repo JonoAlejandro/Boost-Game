@@ -5,7 +5,10 @@ using TMPro;
 public class timer : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
-    public float timeStart;
+    float timeStart = 0f;
+    public float TimeStart { get { return timeStart; } }
+
+   
 
     private void Start()
     {

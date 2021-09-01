@@ -13,6 +13,7 @@ public class Pause : MonoBehaviour
     [SerializeField] GameObject controlsMenu;
     [SerializeField] GameObject VictoryScreen;
     [SerializeField] GameObject OptionsMenu;
+    [SerializeField] GameObject OptionsButton;
 
     // Components
     public TextMeshProUGUI timerText;
@@ -146,6 +147,7 @@ public class Pause : MonoBehaviour
             mainMenu.SetActive(true);
             playButton.SetActive(false);
             controlsButton.SetActive(false);
+            OptionsButton.SetActive(false);
             isOnVictoryScreen = true;
         }
     }

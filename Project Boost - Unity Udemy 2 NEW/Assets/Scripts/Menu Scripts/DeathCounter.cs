@@ -5,7 +5,9 @@ using TMPro;
 public class DeathCounter : MonoBehaviour
 {
     TextMeshProUGUI timerText;
-    float deaths = 0;
+    int deaths = 0;
+    public int Deaths { get { return deaths; } }
+
 
     private void Start()
     {

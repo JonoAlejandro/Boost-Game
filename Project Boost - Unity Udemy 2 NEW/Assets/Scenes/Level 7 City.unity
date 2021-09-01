@@ -1001,25 +1001,19 @@ MonoBehaviour:
   movementVector: {x: 0, y: 10, z: 0}
   movementFactor: 0
   period: 15
---- !u!95 &232322503
-Animator:
-  serializedVersion: 3
+--- !u!114 &232322503
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232322501}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7447d9a0d81824e4b817979e688b06cd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a97fe4580c9f59a47863b44e0539ac91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockRotation: {x: 3, y: 5, z: 0}
 --- !u!4 &232322504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9160484018671217167, guid: c8acd54f915703644a4fd26de8d94511, type: 3}
@@ -4049,25 +4043,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1765425325707403572, guid: 8c1e0f8e9e07cbf4a9ee8ac61c46fa0f, type: 3}
   m_PrefabInstance: {fileID: 991385283}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &991385285
-Animator:
-  serializedVersion: 3
+--- !u!114 &991385285
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991385284}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b0725d14a54d90745bf914105068cdd3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a97fe4580c9f59a47863b44e0539ac91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockRotation: {x: 5, y: -20, z: 0}
 --- !u!4 &991385287 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8927661315612986688, guid: 8c1e0f8e9e07cbf4a9ee8ac61c46fa0f, type: 3}
@@ -4890,25 +4878,19 @@ MonoBehaviour:
   movementVector: {x: 0, y: 35, z: 0}
   movementFactor: 0
   period: 15
---- !u!95 &1164421531
-Animator:
-  serializedVersion: 3
+--- !u!114 &1164421531
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164421529}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 297931e552f650949b26723adf52d643, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a97fe4580c9f59a47863b44e0539ac91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockRotation: {x: 2, y: -6, z: 0}
 --- !u!4 &1164421532 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9160484018671217167, guid: c8acd54f915703644a4fd26de8d94511, type: 3}
@@ -5070,25 +5052,19 @@ MonoBehaviour:
   movementVector: {x: 0, y: 15, z: 0}
   movementFactor: 0.912
   period: 12
---- !u!95 &1197636857
-Animator:
-  serializedVersion: 3
+--- !u!114 &1197636857
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1197636855}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2acf97dc3701df34a9dc90958445f8c0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a97fe4580c9f59a47863b44e0539ac91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockRotation: {x: -5, y: 5, z: 2}
 --- !u!4 &1197636858 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9160484018671217167, guid: c8acd54f915703644a4fd26de8d94511, type: 3}
@@ -6387,25 +6363,19 @@ MonoBehaviour:
   movementVector: {x: 0, y: 10, z: 0}
   movementFactor: 0
   period: 5
---- !u!95 &1500637878
-Animator:
-  serializedVersion: 3
+--- !u!114 &1500637878
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500637876}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f64dbdfe8112c194993ca30c71aa6076, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a97fe4580c9f59a47863b44e0539ac91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockRotation: {x: 1, y: 3, z: 2}
 --- !u!4 &1500637879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9160484018671217167, guid: c8acd54f915703644a4fd26de8d94511, type: 3}
@@ -7857,30 +7827,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1765425325707403572, guid: 8c1e0f8e9e07cbf4a9ee8ac61c46fa0f, type: 3}
   m_PrefabInstance: {fileID: 170088468}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1922211072 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8927661315612986688, guid: 8c1e0f8e9e07cbf4a9ee8ac61c46fa0f, type: 3}
-  m_PrefabInstance: {fileID: 170088468}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1922211073
-Animator:
-  serializedVersion: 3
+--- !u!114 &1922211071
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922211070}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b0725d14a54d90745bf914105068cdd3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a97fe4580c9f59a47863b44e0539ac91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockRotation: {x: 0, y: 10, z: 5}
+--- !u!4 &1922211072 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8927661315612986688, guid: 8c1e0f8e9e07cbf4a9ee8ac61c46fa0f, type: 3}
+  m_PrefabInstance: {fileID: 170088468}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1923436906
 GameObject:
   m_ObjectHideFlags: 0
@@ -8774,25 +8738,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1765425325707403572, guid: 8c1e0f8e9e07cbf4a9ee8ac61c46fa0f, type: 3}
   m_PrefabInstance: {fileID: 2139512164}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &2139512166
-Animator:
-  serializedVersion: 3
+--- !u!114 &2139512166
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139512165}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b0725d14a54d90745bf914105068cdd3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a97fe4580c9f59a47863b44e0539ac91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockRotation: {x: 10, y: 15, z: 0}
 --- !u!4 &2139512168 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8927661315612986688, guid: 8c1e0f8e9e07cbf4a9ee8ac61c46fa0f, type: 3}
