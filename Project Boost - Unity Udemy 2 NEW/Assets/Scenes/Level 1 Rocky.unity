@@ -10196,10 +10196,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 112358414, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
-      propertyPath: cheatsText
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8581765054847742369, guid: a83e89678c5411c4cb64aac1195fe3e4, type: 3}
       propertyPath: m_Name
       value: Rocket
