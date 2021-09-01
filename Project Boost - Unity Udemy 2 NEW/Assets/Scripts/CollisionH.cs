@@ -177,8 +177,10 @@ void TogglingCheatsOnOrOff()
 
     void StartSuccessSequence()
     {
-        TogglingCheatsOnOrOff();
-
+        if (cheatsToggle)
+        {
+            TogglingCheatsOnOrOff();
+        }
 
         successParticle.Play();
         moveComponent.enabled = false;
