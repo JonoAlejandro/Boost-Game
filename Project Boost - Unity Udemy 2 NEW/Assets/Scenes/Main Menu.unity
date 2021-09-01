@@ -899,7 +899,7 @@ GameObject:
   - component: {fileID: 198249320}
   - component: {fileID: 198249319}
   m_Layer: 0
-  m_Name: Script
+  m_Name: VolumeScript
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
