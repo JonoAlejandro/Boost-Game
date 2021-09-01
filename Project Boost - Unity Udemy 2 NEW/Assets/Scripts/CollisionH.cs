@@ -17,6 +17,7 @@ public class CollisionH : MonoBehaviour
     public float victorySnapshotTransition;
     public float unpausedSnapshotTransition;
 
+
     Vector3 startPlayerPos;
     Quaternion startPlayerRotation;
 
@@ -28,6 +29,8 @@ public class CollisionH : MonoBehaviour
     bool collisionDisable = false;
     bool DisableMovement = false;
     bool won = false;
+
+    public bool Won { get { return won; } }
 
     void Start()
     { 
@@ -69,11 +72,24 @@ public class CollisionH : MonoBehaviour
     void ReloadOnPress()
     {
         if (Input.GetKeyDown(KeyCode.R))
-        {   
-            ReloadLevel();
+        {
+            // If Paused Check is false then reload Level.
+            if (!IsPausedCheck())
+            {
+                ReloadLevel();
+            }
         }
     }
+    bool IsPausedCheck()
+    {   
+        Pause pause = FindObjectOfType<Pause>();
+        if (pause.PauseToggle)
+        {
+            return true;
+        }
+        return false;
 
+    }
     void RespondToDebugKeys()
     {
         //Next Level
@@ -130,7 +146,7 @@ public class CollisionH : MonoBehaviour
     void VictorySnapshotTransition()
     {
         victory.TransitionTo(victorySnapshotTransition);
-            Debug.Log("here");
+
 
     }
 

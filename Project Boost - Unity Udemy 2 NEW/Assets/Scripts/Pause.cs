@@ -25,6 +25,8 @@ public class Pause : MonoBehaviour
     public float pauseMusicTransitionTime;
     //States
     bool pauseToggle = false;
+    public bool PauseToggle { get { return pauseToggle; } }
+
     bool isOnVictoryScreen = false;
     bool pauseMusicToggle = false;
 
@@ -88,15 +90,12 @@ public class Pause : MonoBehaviour
             AudioListener.pause = true;
             backgroundMusic.ignoreListenerPause = true;
             pauseMusicToggle = true;
-            Debug.Log("Pause Music");
         }
         else if (Time.timeScale == 1 && pauseMusicToggle)
         {
             unpaused.TransitionTo(pauseMusicTransitionTime);
             AudioListener.pause = false;
             pauseMusicToggle = false;
-            Debug.Log("Unpause Music");
-
         }
     }
 
