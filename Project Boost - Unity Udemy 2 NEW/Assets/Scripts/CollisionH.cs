@@ -1,6 +1,8 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
+using TMPro;
 
 //POG
 public class CollisionH : MonoBehaviour
@@ -11,6 +13,13 @@ public class CollisionH : MonoBehaviour
     [SerializeField] AudioSource audioWin;
     [SerializeField] AudioSource audioDie;
     [SerializeField] float delay = 1f;
+    [SerializeField] CheatsText cheatsText; 
+
+    public AudioMixerSnapshot unpaused;
+    public AudioMixerSnapshot victory;
+    public float victorySnapshotTransition;
+    public float unpausedSnapshotTransition;
+
 
     Vector3 startPlayerPos;
     Quaternion startPlayerRotation;
@@ -23,15 +32,20 @@ public class CollisionH : MonoBehaviour
     bool collisionDisable = false;
     bool DisableMovement = false;
     bool won = false;
+    bool cheatsToggle = false;
+
+    public bool Won { get { return won; } }
 
     void Start()
-    { 
+    {
+        
         SavingPlayerPosition();
         GrabComponent();
     }
 
     void GrabComponent()
     {
+        cheatsText = FindObjectOfType<CheatsText>(); 
         rb = GetComponent<Rigidbody>();
         
         moveComponent = GetComponent<Mover>();
@@ -64,13 +78,36 @@ public class CollisionH : MonoBehaviour
     void ReloadOnPress()
     {
         if (Input.GetKeyDown(KeyCode.R))
-        {   
-            ReloadLevel();
+        {
+            // If Paused Check is false then reload Level.
+            if (!IsPausedCheck())
+            {
+                ReloadLevel();
+            }
         }
     }
+    bool IsPausedCheck()
+    {   
+        Pause pause = FindObjectOfType<Pause>();
+        if (pause.PauseToggle)
+        {
+            return true;
+        }
+        return false;
 
+    }
     void RespondToDebugKeys()
     {
+        //Enable Cheats
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            TogglingCheatsOnOrOff();
+        }
+
+        if (!cheatsToggle) { return; }
+
+        cheatsText.Activate();
+        
         //Next Level
         if (Input.GetKeyDown(KeyCode.L))
         {
@@ -81,12 +118,21 @@ public class CollisionH : MonoBehaviour
         {
             LoadLevel(false);
         }
+        //toggle collision
         else if (Input.GetKeyDown(KeyCode.C))
         {
-            collisionDisable = !collisionDisable; //toggle collision
+            collisionDisable = !collisionDisable; 
             Debug.Log("Disabled Collision");
         }
     }
+
+void TogglingCheatsOnOrOff()
+    {
+        cheatsToggle = !cheatsToggle;
+        Debug.Log("Toggled Cheats " + cheatsToggle);
+        cheatsText.Deactivate();
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (isTransitioning || collisionDisable) { return; }
@@ -111,7 +157,9 @@ public class CollisionH : MonoBehaviour
                 break;
             case "Finish":
                 Debug.Log("You're Winner\n" + "Loading next level");
+                VictorySnapshotTransition();
                 StartSuccessSequence();
+
                 break;
             default:
                 Debug.Log("You Died");
@@ -120,14 +168,29 @@ public class CollisionH : MonoBehaviour
         }
     }
 
+    void VictorySnapshotTransition()
+    {
+        victory.TransitionTo(victorySnapshotTransition);
+
+
+    }
+
     void StartSuccessSequence()
     {
+        if (cheatsToggle)
+        {
+            TogglingCheatsOnOrOff();
+        }
+
         successParticle.Play();
         moveComponent.enabled = false;
         isTransitioning = true;
-        
+
+
         audioWin.Play();
         won = true;
+
+
 
         StartCoroutine(WaitBeforeShow());
     }
@@ -143,6 +206,7 @@ public class CollisionH : MonoBehaviour
     IEnumerator WaitBeforeShow()
     {
         yield return new WaitForSeconds(delay);
+        unpaused.TransitionTo(unpausedSnapshotTransition);
         LoadLevel(true);
     }
 

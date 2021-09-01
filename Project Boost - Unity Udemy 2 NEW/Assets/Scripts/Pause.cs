@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
 public class Pause : MonoBehaviour
@@ -11,14 +12,23 @@ public class Pause : MonoBehaviour
     [SerializeField] GameObject controlsButton;
     [SerializeField] GameObject controlsMenu;
     [SerializeField] GameObject VictoryScreen;
+    [SerializeField] GameObject OptionsMenu;
+
     // Components
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI timerTextVictory;
     public TextMeshProUGUI deathText;
     public TextMeshProUGUI deathTextVictory;
+    public AudioMixerSnapshot paused;
+    public AudioMixerSnapshot unpaused;
+    public AudioSource backgroundMusic;
+    public float pauseMusicTransitionTime;
     //States
     bool pauseToggle = false;
+    public bool PauseToggle { get { return pauseToggle; } }
+
     bool isOnVictoryScreen = false;
+    bool pauseMusicToggle = false;
 
 
     // Start is called before the first frame update
@@ -32,8 +42,10 @@ public class Pause : MonoBehaviour
     void Update()
     {
         PauseGame();
+        Lowpass();
         FirstSceneCheck();
         VictoryScreenCheck();
+
     }
 
     void FirstSceneCheck()
@@ -43,7 +55,6 @@ public class Pause : MonoBehaviour
         if (currentScene == 0)
         {
             Destroy(gameObject);
-            Debug.Log("deleted Pause Screen");
             Time.timeScale = 1;
         }
     }
@@ -54,7 +65,6 @@ public class Pause : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pauseToggle = !pauseToggle;
-            Debug.Log("Pause is " + pauseToggle);
         }
 
         
@@ -69,7 +79,25 @@ public class Pause : MonoBehaviour
 
     }
 
-    void PauseSequence()
+    void Lowpass()
+    {
+        
+        if (Time.timeScale == 0 && !pauseMusicToggle)
+        {            
+            paused.TransitionTo(pauseMusicTransitionTime);
+            AudioListener.pause = true;
+            backgroundMusic.ignoreListenerPause = true;
+            pauseMusicToggle = true;
+        }
+        else if (Time.timeScale == 1 && pauseMusicToggle)
+        {
+            unpaused.TransitionTo(pauseMusicTransitionTime);
+            AudioListener.pause = false;
+            pauseMusicToggle = false;
+        }
+    }
+
+        void PauseSequence()
     {
         Time.timeScale = 0;
         Debug.Log("Going to Pause Menu");
@@ -81,14 +109,19 @@ public class Pause : MonoBehaviour
     {
         controlsMenu.SetActive(false);
         mainMenu.SetActive(false);
+        OptionsMenu.SetActive(false);
+
         Time.timeScale = 1;
         Debug.Log("Unpausing Game");
         Cursor.visible = false; 
     }
 
     public void GoToMainMenu()
-    {   
+    {
+        unpaused.TransitionTo(pauseMusicTransitionTime);
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
+        AudioListener.pause = false;
     }
 
     void VictoryScreenCheck()
