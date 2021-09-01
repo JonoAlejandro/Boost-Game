@@ -2,6 +2,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
+using TMPro;
 
 //POG
 public class CollisionH : MonoBehaviour
@@ -12,6 +13,8 @@ public class CollisionH : MonoBehaviour
     [SerializeField] AudioSource audioWin;
     [SerializeField] AudioSource audioDie;
     [SerializeField] float delay = 1f;
+    [SerializeField] CheatsText cheatsText; 
+
     public AudioMixerSnapshot unpaused;
     public AudioMixerSnapshot victory;
     public float victorySnapshotTransition;
@@ -29,17 +32,20 @@ public class CollisionH : MonoBehaviour
     bool collisionDisable = false;
     bool DisableMovement = false;
     bool won = false;
+    bool cheatsToggle = false;
 
     public bool Won { get { return won; } }
 
     void Start()
-    { 
+    {
+        
         SavingPlayerPosition();
         GrabComponent();
     }
 
     void GrabComponent()
     {
+        cheatsText = FindObjectOfType<CheatsText>(); 
         rb = GetComponent<Rigidbody>();
         
         moveComponent = GetComponent<Mover>();
@@ -92,6 +98,16 @@ public class CollisionH : MonoBehaviour
     }
     void RespondToDebugKeys()
     {
+        //Enable Cheats
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            TogglingCheatsOnOrOff();
+        }
+
+        if (!cheatsToggle) { return; }
+
+        cheatsText.Activate();
+        
         //Next Level
         if (Input.GetKeyDown(KeyCode.L))
         {
@@ -102,12 +118,21 @@ public class CollisionH : MonoBehaviour
         {
             LoadLevel(false);
         }
+        //toggle collision
         else if (Input.GetKeyDown(KeyCode.C))
         {
-            collisionDisable = !collisionDisable; //toggle collision
+            collisionDisable = !collisionDisable; 
             Debug.Log("Disabled Collision");
         }
     }
+
+void TogglingCheatsOnOrOff()
+    {
+        cheatsToggle = !cheatsToggle;
+        Debug.Log("Toggled Cheats " + cheatsToggle);
+        cheatsText.Deactivate();
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (isTransitioning || collisionDisable) { return; }
@@ -151,7 +176,10 @@ public class CollisionH : MonoBehaviour
     }
 
     void StartSuccessSequence()
-    { 
+    {
+        TogglingCheatsOnOrOff();
+
+
         successParticle.Play();
         moveComponent.enabled = false;
         isTransitioning = true;

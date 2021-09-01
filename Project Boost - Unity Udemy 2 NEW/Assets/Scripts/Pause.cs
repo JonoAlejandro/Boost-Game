@@ -55,7 +55,6 @@ public class Pause : MonoBehaviour
         if (currentScene == 0)
         {
             Destroy(gameObject);
-            Debug.Log("deleted Pause Screen");
             Time.timeScale = 1;
         }
     }
@@ -66,7 +65,6 @@ public class Pause : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pauseToggle = !pauseToggle;
-            Debug.Log("Pause is " + pauseToggle);
         }
 
         
