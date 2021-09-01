@@ -50,7 +50,7 @@ public class HighScore : MonoBehaviour
             victoryScreen = true;
             Debug.Log(timerCounter.TimeStart);
 
-
+            
             //Setting Old Scores
             SettingText();
 
