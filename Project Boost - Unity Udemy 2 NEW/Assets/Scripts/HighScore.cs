@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class HighScore : MonoBehaviour
 {
-    timer timerCounter;
+    TimerScript timerCounter;
     DeathCounter  deaths;
 
     [SerializeField] TextMeshProUGUI finalTimeHS;
@@ -17,16 +17,31 @@ public class HighScore : MonoBehaviour
 
     float timerSave;
     int deathSave;
+    int firstTimeStart = 1;
+
 
     bool victoryScreen = false;
+    
 
     private void Start()
     {
-        timerCounter = FindObjectOfType<timer>();
+        timerCounter = FindObjectOfType<TimerScript>();
         deaths = FindObjectOfType<DeathCounter>();
         hsTimer = "Time: ";
         hsDeaths = "Deaths: ";
 
+        FirstTimeCheck();
+    }
+
+    void FirstTimeCheck()
+    {
+
+        if (PlayerPrefs.GetInt("firstTimeStart", firstTimeStart) == 1)
+        {
+            firstTimeStart = 0;
+            PlayerPrefs.SetInt("firstTimeStart", firstTimeStart);
+            Reset();
+        }
     }
 
     int CheckFinalScene()
@@ -40,15 +55,14 @@ public class HighScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       int SceneIndex = CheckFinalScene();
-        
-
+      
+        int SceneIndex = CheckFinalScene();
         //Checking if we are in last level.
         if (SceneIndex == SceneManager.sceneCountInBuildSettings && !victoryScreen)
         {
             Cursor.visible = true;
             victoryScreen = true;
-            Debug.Log(timerCounter.TimeStart);
+            Debug.Log(timerCounter.TimeStartSeconds);
 
             
             //Setting Old Scores
@@ -79,19 +93,17 @@ public class HighScore : MonoBehaviour
 
     private void HighScoreConditions()
     {
-        if (PlayerPrefs.GetFloat("Timer HighScore") > timerCounter.TimeStart)
+        if (PlayerPrefs.GetFloat("Timer HighScore") > timerCounter.TimeStartSeconds)
         {
-            timerSave = timerCounter.TimeStart;
+            timerSave = timerCounter.TimeStartSeconds;
             finalTimeHS.text = hsTimer + timerSave.ToString("F2");
             PlayerPrefs.SetFloat("Timer HighScore", timerSave);
-        }
-
-        if (PlayerPrefs.GetInt("Deaths HighScore") > deaths.Deaths)
-        {
+            
             deathSave = deaths.Deaths;
             deathsHS.text = hsDeaths + deathSave;
             PlayerPrefs.SetInt("Deaths HighScore", deathSave);
         }
+
     }
 
 
