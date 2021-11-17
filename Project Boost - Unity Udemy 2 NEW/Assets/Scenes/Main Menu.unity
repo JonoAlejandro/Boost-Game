@@ -4625,7 +4625,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Alpha build - 0.7.5
+  m_text: 'Alpha build - 0.7.5.1
 
 '
   m_isRightToLeft: 0
